@@ -41,6 +41,9 @@ Depois acesse a API em:
 http://localhost:8000
 ```
 
+Ao abrir esse endereço no navegador, a aplicação mostra uma interface web
+simples para cadastrar, listar e marcar tarefas como concluídas.
+
 ## Exemplos de uso
 
 Criar uma tarefa:
