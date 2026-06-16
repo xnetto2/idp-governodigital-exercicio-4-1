@@ -15,9 +15,9 @@ A aplicação mantém as tarefas apenas em memória, sem banco de dados e sem pe
 ## Endpoints
 
 - `GET /health`: retorna `{"status":"ok"}`
-- `POST /todos`: cria uma nova tarefa
-- `GET /todos/{id}`: consulta uma tarefa pelo id
-- `PUT /todos/{id}`: atualiza uma tarefa existente
+- `POST /tarefas`: cria uma nova tarefa
+- `GET /tarefas/{id}`: consulta uma tarefa pelo id
+- `PUT /tarefas/{id}`: atualiza uma tarefa existente
 
 A API retorna erro 404 quando o id informado não existe.
 
@@ -46,7 +46,7 @@ http://localhost:8000
 Criar uma tarefa:
 
 ```bash
-curl -X POST http://localhost:8000/todos \
+curl -X POST http://localhost:8000/tarefas \
   -H "Content-Type: application/json" \
   -d '{"titulo":"Estudar API REST","concluida":false}'
 ```
@@ -54,13 +54,13 @@ curl -X POST http://localhost:8000/todos \
 Consultar uma tarefa:
 
 ```bash
-curl http://localhost:8000/todos/1
+curl http://localhost:8000/tarefas/1
 ```
 
 Atualizar uma tarefa:
 
 ```bash
-curl -X PUT http://localhost:8000/todos/1 \
+curl -X PUT http://localhost:8000/tarefas/1 \
   -H "Content-Type: application/json" \
   -d '{"titulo":"Estudar API REST com FastAPI","concluida":true}'
 ```

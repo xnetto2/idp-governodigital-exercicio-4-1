@@ -25,7 +25,7 @@ def health():
     return {"status": "ok"}
 
 
-@app.post("/todos", response_model=Todo)
+@app.post("/tarefas", response_model=Todo)
 def criar_todo(todo_entrada: TodoEntrada):
     global proximo_id
 
@@ -36,7 +36,7 @@ def criar_todo(todo_entrada: TodoEntrada):
     return todo
 
 
-@app.get("/todos/{id}", response_model=Todo)
+@app.get("/tarefas/{id}", response_model=Todo)
 def ler_todo(id: int):
     todo = todos.get(id)
     if todo is None:
@@ -45,7 +45,7 @@ def ler_todo(id: int):
     return todo
 
 
-@app.put("/todos/{id}", response_model=Todo)
+@app.put("/tarefas/{id}", response_model=Todo)
 def atualizar_todo(id: int, todo_entrada: TodoEntrada):
     if id not in todos:
         raise HTTPException(status_code=404, detail="Tarefa nao encontrada")
